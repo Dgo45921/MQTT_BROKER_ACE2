@@ -32,7 +32,7 @@ client.on('close', () => {
 // Establish MongoDB connection
 async function connectToMongoDB() {
   try {
-    const client = new MongoClient(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(mongoUri);
     await client.connect();
     db = client.db('sensor_data');
     console.log('Connected to MongoDB');
